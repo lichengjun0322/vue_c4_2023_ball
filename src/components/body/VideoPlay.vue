@@ -31,20 +31,37 @@ export default {
                 console.log("");
             }else{
                 //获取时间
-                let hour=new Date().getHours().toString();
-                let minute=new Date().getMinutes().toString();
-                let second=new Date().getSeconds().toString();
-
-                let new_node_01=document.createElement("LI");
-                let text_node_01=document.createTextNode(hour+":"+minute+":"+second);
+                let valueName =
+                    (new Date().getFullYear() +
+                    "/" +
+                    (new Date().getMonth() + 1) +
+                    "/" +
+                    new Date().getDate() +
+                    " " +
+                    (new Date().getHours() >= 10 ? new Date().getHours() : "0" + new Date().getHours()) +
+                    ":" +
+                    (new Date().getMinutes() >= 10 ? new Date().getMinutes() : "0" + new Date().getMinutes()) +
+                    ":" +
+                    (new Date().getSeconds() >= 10 ? new Date().getSeconds() : "0" + new Date().getSeconds())).toString();
+                    
+                let new_node_01 = document.createElement("LI");
+                let text_node_01 = document.createTextNode(valueName);
                 new_node_01.appendChild(text_node_01);
+
+                new_node_01.classList.add("li_01");
+
 
                 let new_node=document.createElement("LI");
                 let text_node=document.createTextNode(document.querySelector(".enter").value);
                 new_node.appendChild(text_node);
+                new_node.classList.add("li_02");
 
-                document.querySelector(".come_out").appendChild(new_node_01);
-                document.querySelector(".come_out").appendChild(new_node);
+                //总的div
+                let new_node_02=document.createElement("DIV");
+                new_node_02.appendChild(new_node_01);
+                new_node_02.appendChild(new_node);
+
+                document.querySelector(".come_out").appendChild(new_node_02);
                 document.querySelector(".enter").value="";
             }
         }
@@ -104,12 +121,16 @@ export default {
     overflow: scroll;
 
 }
-.come_out>li {
-    list-style: none;
+.come_out>div {
+    width:100%;
+    height:10%;
+}
+/* .come_out>div>li {
+    
     height:10%;
     width:100%;
 
-}
+} */
 .inp {
     width: 100%;
     height: 10%;
@@ -132,5 +153,15 @@ input {
     width: 100%;
     height: 100%;
 
+}
+.li_01 {
+    height:30%;
+    font-size:small;
+    list-style: none;
+}
+.li_02 {
+    height:70%;
+    font-size:large;
+    list-style: none;
 }
 </style>
