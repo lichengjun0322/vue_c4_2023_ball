@@ -1,9 +1,9 @@
 import service from "../service/service";
 
-export function get_data(params){
+export function Get_data(params){
     return service({
+        url:"/api/video/get",
         method:"GET",
-        url:"/api/branch/query",
         params,
         // timestamp: new Date().getTime()
     })

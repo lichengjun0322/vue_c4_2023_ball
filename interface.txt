@@ -1,4 +1,13 @@
 获取视频数据
-
+Get_data
+url:"/api/video/get",
 method:"GET",
-        url:"/api/branch/query",
+params:null,
+return:List  
+[
+    {
+        img_src:",
+        video_href:"
+        }...
+    
+    ];
