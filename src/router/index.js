@@ -1,5 +1,6 @@
 import VueRouter from "vue-router";
 import HomePage from "../components/HomePage.vue";
+import Login_test from "../components/Login_test.vue";
 //import HeaderPage from "../components/HeaderPage.vue";
 import OnePage from "../components/body/OnePage.vue";
 import TwoPage from "../components/body/TwoPage.vue";
@@ -9,6 +10,10 @@ import VideoPlay from "../components/body/VideoPlay.vue";
 export default new VueRouter({
     mode:"history",
     routes:[
+        {
+            path: "/",
+            component: Login_test,
+        },
         {
             path:"/home",
             component: HomePage,
