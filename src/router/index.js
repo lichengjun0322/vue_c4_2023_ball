@@ -15,7 +15,7 @@ export default new VueRouter({
             component: Login_test,
         },
         {
-            path:"/home",
+            path:"/home/num1",
             component: HomePage,
             children:[
                 {

@@ -36,6 +36,7 @@
 
 
 import * as echarts from "echarts";
+import { Notification } from 'element-ui';
 export default {
     name: "Login_test",
     data() {
@@ -59,12 +60,13 @@ export default {
     methods: {
         check() {
             if (this.sysuser.username == "admin" && this.sysuser.password == "123456") {
+                const h = this.$createElement;
                 this.$notify({
-                    title: '提示',
-                    message: '这是一条不会自动关闭的消息',
-                    duration: 3000
+                    title: '提示信息',
+                    type: 'success',
+                    message: h('i', { style: 'color: teal' }, '您已经成功登录系统')
                 });
-                this.$router.push("/home");
+                this.$router.push("/home/num1");
             }
             else {
                 this.$message.error("登录失败");
@@ -130,5 +132,10 @@ export default {
     background-image: linear-gradient(to bottom right, #FC466B, #3F5EFB);
     overflow: hidden;
 }
+
+.el-notification.right {
+    height: 100px;
+    width: 400px;
+    background: #fcfbfb;
+}
 </style>
-  
