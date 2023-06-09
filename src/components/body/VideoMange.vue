@@ -1,6 +1,6 @@
 <template>
     <div class="big">
-        <el-dialog title="新增门店信息" :visible.sync="dialogFormVisible">
+        <el-dialog title="新增视频" :visible.sync="dialogFormVisible">
             <el-form v-model="form" >
                 <el-form-item label="视频名称" :label-width="formLabelWidth" >
                     <el-input v-model="form.name" autocomplete="off" width="200"></el-input>
