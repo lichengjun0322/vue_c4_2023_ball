@@ -68,7 +68,11 @@ export default {
     width:13.64%;
     z-index:999;
 }
-
+.router-link-active {
+    display:block;
+    width:100%;
+    height:100%;
+}
 img {
     width: 95%;
     height: 95%;
