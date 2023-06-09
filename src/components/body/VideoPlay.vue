@@ -1,13 +1,12 @@
 <template>
     <div class="big">
-
         <div class="top">
             <el-button type="danger" plain>开始转换</el-button>
             <el-button type="danger" plain>文本导出</el-button>
             <el-button type="danger" plain>Word导出</el-button>
         </div>
         <div class="bottom">
-            <div class="left"><vue-core-video-player src=""></vue-core-video-player>
+            <div class="left"><vue-core-video-player :src="this.$route.params.url"></vue-core-video-player>
             </div>
             <div class="right">
                 <div class="come_out"></div>
@@ -27,6 +26,7 @@
 export default {
     methods: {
         cli() {
+            console.log(this.$route.params);
             //console.log(document.querySelector(".enter").value)
             if(document.querySelector(".enter").value==""){
                 console.log("");

@@ -1,0 +1,4 @@
+获取视频数据
+
+method:"GET",
+        url:"/api/branch/query",

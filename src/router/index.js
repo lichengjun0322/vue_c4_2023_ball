@@ -26,7 +26,8 @@ export default new VueRouter({
                     component:VideoMange
                 },{
                     path:"/home/num3/:url",
-                    component:VideoPlay
+                    component:VideoPlay,
+                    props:true
                 }
             ]
         },{
