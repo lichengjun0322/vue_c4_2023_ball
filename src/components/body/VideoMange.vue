@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import get_data from "../../api/video";
+//import get_data from "../../api/video";
 export default {
 
     data(){
@@ -42,18 +42,18 @@ export default {
         getUrl(p){
             return "/home/num3/"+encodeURIComponent(p);
         },
-        get_data(params) {
-            console.log("123123123")
-            getAll_branch(params).then((res) => {
-                this.tableData = res.data.data;
-                this.temp = res.data.data;
-            }).catch((err) => {
-                console.log(err);
-            });
-            this.form.Branch_address = "";
-            this.form.Branch_square = "";
-            this.form.Branch_name = "";
-        },
+        // get_data(params) {
+        //     console.log("123123123")
+        //     getAll_branch(params).then((res) => {
+        //         this.tableData = res.data.data;
+        //         this.temp = res.data.data;
+        //     }).catch((err) => {
+        //         console.log(err);
+        //     });
+        //     this.form.Branch_address = "";
+        //     this.form.Branch_square = "";
+        //     this.form.Branch_name = "";
+        // },
     },
     created(){
         //console.log(123);
