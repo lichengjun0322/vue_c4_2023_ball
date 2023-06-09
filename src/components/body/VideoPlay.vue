@@ -1,5 +1,6 @@
 <template>
     <div class="big">
+
         <div class="top">
             <el-button type="danger" plain>开始转换</el-button>
             <el-button type="danger" plain>文本导出</el-button>
@@ -118,7 +119,7 @@ export default {
     border: black solid 1px;
     display:flex;
     flex-direction: column;
-    overflow: scroll;
+    overflow-y: scroll;
 
 }
 .come_out>div {

@@ -2,7 +2,9 @@
   <div>
     <HeaderPage></HeaderPage>
     <div class="main"><router-view></router-view></div>
-    <footer>Footer</footer>
+    <footer>版权所有 © 2023 Mozilla Firefox. 北京谋智火狐信息技术有限公司 <br>
+      京ICP备11011334号-1
+京公网安备 京公网安备11010102001811号</footer>
   </div>
 </template>
 
@@ -26,9 +28,12 @@ export default {
   padding-top:80px;
 }
 footer {
+  padding-top:30px;
   margin-top:5px;
   width:100%;
   height:150px;
-  background-color: green;
+  background-color: #fff;
+  line-height:3rem;
+  text-align: center;
 }
 </style>

@@ -7,6 +7,7 @@ import FirstPage from "../components/try/FirstPage.vue";
 import VideoMange from "../components/body/VideoMange.vue";
 import VideoPlay from "../components/body/VideoPlay.vue";
 export default new VueRouter({
+    mode:"history",
     routes:[
         {
             path:"/home",
@@ -19,7 +20,7 @@ export default new VueRouter({
                     path:"/home/num2",
                     component:VideoMange
                 },{
-                    path:"/home/num3",
+                    path:"/home/num3/:url",
                     component:VideoPlay
                 }
             ]

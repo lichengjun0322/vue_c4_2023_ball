@@ -1,16 +1,16 @@
 <template>
   <div class="header">
     <div class="ico">
-        <img src="" alt="">
+        <img src="../../public/img/8.jpg" alt="">
     </div>
     <div class="header_left">
-        <li><router-link to="/home/num1">1</router-link></li>
-        <li><router-link to="/home/num2">1</router-link></li>
-        <li><router-link to="/home/num3">1</router-link></li>
-        <li><router-link to="/home/num4">1</router-link></li>
+        <li><router-link to="/home/num1">首页</router-link></li>
+        <li><router-link to="/home/num2">视频管理</router-link></li>
+        <li><router-link to="/home/num3">录像分析</router-link></li>
+        <li><router-link to="/home/num4">战术集合</router-link></li>
     </div>
     <div class="header_right">
-        <li><a>1</a></li>
+        <li>  <button >警告按钮</button></li>
     </div>
   </div>
 </template>
@@ -26,6 +26,19 @@ export default {
 * {
     padding:0;
     margin:0
+}
+img {
+    width:95%;
+     height:95%;
+}
+button {
+    width:80%;
+    height:65px;
+    border-radius: 10px;
+    background-color:  red;
+}
+button:hover {
+    cursor:pointer;
 }
 a {
   text-decoration: none;
