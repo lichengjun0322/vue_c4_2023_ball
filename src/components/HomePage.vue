@@ -25,7 +25,7 @@ export default {
   margin: 0 auto;
   width: 80%;
   height: 800px;
-  padding-top:80px;
+  padding-top:20px;
 }
 footer {
   padding-top:30px;

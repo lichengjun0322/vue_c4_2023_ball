@@ -1,5 +1,22 @@
 <template>
     <div class="big">
+        <el-dialog title="新增门店信息" :visible.sync="dialogFormVisible">
+            <el-form v-model="form" >
+                <el-form-item label="视频名称" :label-width="formLabelWidth" >
+                    <el-input v-model="form.name" autocomplete="off" width="200"></el-input>
+                </el-form-item>
+                <el-form-item label="视频地址" :label-width="formLabelWidth">
+                    <el-input v-model="form.address" autocomplete="off" width="200"></el-input>
+                </el-form-item>
+            </el-form>
+            <div slot="footer" class="dialog-footer">
+                <el-button @click="dialogFormVisible = false">取 消</el-button>
+                <el-button type="primary" @click="queding()">确
+                    定</el-button>
+            </div>
+        </el-dialog>
+
+
         <div class="body">
             <div class="column" v-for="(item,index) in all_src" :key="index" ><a :href="getUrl(item.video_href)"  class="a_01" ><img :src="item.img_src" alt=""></a><a class="a_02" :href="getUrl(item.video_href)"><p>12333333333</p></a></div>
             <!-- <div class="column" v-for=""></div>  -->
@@ -26,11 +43,16 @@
 </template>
 
 <script>
+import bus from "../../Bus.js/bus"
 import Get_data from "../../api/video";
 export default {
 
     data(){
         return {
+            dialogFormVisible:false,
+            form:{name:"",address:""},
+            formLabelWidth:"100px",
+
             page_count:1,    //页数量
             img_nums:2,   //视频数量
             all_src:[{img_src:require("../../../public/img/1.jpg"),video_href:require("../../../public/video/202105121400.mp4")},{img_src:require("../../../public/img/1.jpg"),video_href:require("../../../public/video/123.mp4")},{img_src:require("../../../public/img/1.jpg"),video_href:require("../../../public/video/123.mp4")},{img_src:require("../../../public/img/1.jpg"),video_href:require("../../../public/video/123.mp4")},{img_src:require("../../../public/img/1.jpg"),video_href:require("../../../public/video/123.mp4")},{img_src:require("../../../public/img/1.jpg"),video_href:require("../../../public/video/123.mp4")},{img_src:require("../../../public/img/1.jpg"),video_href:require("../../../public/video/123.mp4")},{img_src:require("../../../public/img/1.jpg"),video_href:require("../../../public/video/123.mp4")},{img_src:require("../../../public/img/1.jpg"),video_href:require("../../../public/video/123.mp4")},{img_src:require("../../../public/img/1.jpg"),video_href:require("../../../public/video/123.mp4")},{img_src:require("../../../public/img/1.jpg"),video_href:require("../../../public/video/123.mp4")},{img_src:require("../../../public/img/1.jpg"),video_href:require("../../../public/video/123.mp4")}],
@@ -45,11 +67,20 @@ export default {
         get_data() {
             Get_data();
         },
+        queding(){
+
+        }
     },
     created(){
         //在开始之前获取
         //this.all_src=this.get_data();
 
+    },
+    mounted(){
+        bus.$on("add_video",()=>{
+            console.log("yes");
+            this. dialogFormVisible=true;
+        })
     }
 }
 </script>
