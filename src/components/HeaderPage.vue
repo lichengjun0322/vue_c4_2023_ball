@@ -46,7 +46,7 @@ export default {
                 this.$notify({
                     title: '提示信息',
                     type: 'success',
-                    message: h('i', { style: 'color: teal' }, '您已经成功退出系统')
+                    message: h('i', { style: 'color: teal' }, '您已经成功退出')
                 });
             this.$router.push("/")
         },
