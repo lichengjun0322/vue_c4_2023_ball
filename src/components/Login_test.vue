@@ -64,7 +64,7 @@ export default {
                 this.$notify({
                     title: '提示信息',
                     type: 'success',
-                    message: h('i', { style: 'color: teal' }, '您已经成功登录系统')
+                    message: h('i', { style: 'color: teal' }, '您已经成功登录')
                 });
                 this.$router.push("/home/num1");
             }
