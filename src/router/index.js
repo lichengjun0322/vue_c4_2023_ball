@@ -15,6 +15,17 @@ export default new VueRouter({
             component: Login_test,
         },
         {
+            path: 'LinkHome',
+            name: 'LinkHome',
+            meta: {
+                // 之后你自己的项目中需要嵌入什么就改link属性值即可。
+              title: '哔哩哔哩',
+              link: 'https://www.bilibili.com/' 
+            },
+            // 你的LinkHome.vue组件放的目录位置
+            component: resolve => require(['@/components/LinkHome'], resolve)
+          },
+        {
             path:"/home/num1",
             component: HomePage,
             children:[

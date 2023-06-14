@@ -5,6 +5,8 @@ import 'element-ui/lib/theme-chalk/index.css';
 import Vuerouter from "vue-router";
 import router from "./router/index.js"
 import VueCoreVideoPlayer from 'vue-core-video-player'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 Vue.use(VueCoreVideoPlayer)
 

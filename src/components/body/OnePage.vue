@@ -1,38 +1,68 @@
 <template>
-    <el-carousel :interval="5000" arrow="always">       
-      <el-carousel-item v-for="item in 4" :key="item">
-        <!-- <h3>{{ item }}</h3> -->
-        <img src="../../../public/img/1.jpg">
-      </el-carousel-item>
-    </el-carousel>
-  </template>
+    <div>
+        <el-carousel :interval="5000" arrow="always">
+            <el-carousel-item v-for="item in 4" :key="item">
+                <!-- <h3>{{ item }}</h3> -->
+                <img src="../../../public/img/1.jpg">
+            </el-carousel-item>
+        </el-carousel>
+        <div>
+            <el-button type="primary" name="LinkHome" @click.native="gotoPage(graphItems.path)">主要按钮</el-button>
+            <vue-iframe url="https://www.bilibili.com/"></vue-iframe>
+        </div>
+    </div>
+</template>
 <!-- interval为自动切换时间 -->
 
 <script>
 export default {
+    data() {
+        return {
+            graphItems: {
+                name: '哔哩哔哩',
+                path: 'LinkHome'
+            }
+        }
+    },
+    methods: {
+        // …… 其他方法
+        onClickLeft() {
+            this.$router.go(-1);
+        },
+        gotoPage(path) {
+            this.$router.push(path);
+            // store存储目标外链的url及要显示的标题
+            // link和title写在路由配置里的meta参数下
+            this.$store.state.iframeSrc = this.$route.meta.link
+            this.$store.state.iframeTitle = this.$route.meta.title
+        },
+        // …… 其他方法
+    }
 
 }
 </script>
 
 <style scoped>
-  .el-carousel__item h3 {
+.el-carousel__item h3 {
     color: #475669;
     font-size: 18px;
     opacity: 0.75;
     line-height: 300px;
     margin: 0;
-  }
-  img {
-    width:100%;
-    height:100%;
-  }
-  .el-carousel__item:nth-child(2n) {
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.el-carousel__item:nth-child(2n) {
     background-color: #99a9bf;
-  }
-  
-  .el-carousel__item:nth-child(2n+1) {
+}
+
+.el-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
-  }
+}
 </style>
 <!-- <template>
 
